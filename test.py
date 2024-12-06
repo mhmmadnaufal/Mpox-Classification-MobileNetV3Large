@@ -76,7 +76,7 @@ def plot_roc_curve(ground_truth_bin, probabilities, class_names, save_path="roc_
 def main():
     BATCH_SIZE = 4
     NUM_CLASSES = 6
-    DATASET_PATHS = {
+    DATASET_PATH = {
         "aug": "./Dataset/Augmented Images/Augmented Images/FOLDS_AUG/",
         "orig": "./Dataset/Original Images/Original Images/FOLDS/",
     }
@@ -84,7 +84,7 @@ def main():
 
     class_names = ["Chickenpox", "Cowpox", "Healthy", "HFMD", "Measles", "Monkeypox"]
 
-    dataset = Data(base_folder_aug=DATASET_PATHS["aug"], base_folder_orig=DATASET_PATHS["orig"])
+    dataset = Data(base_folder_aug=DATASET_PATH["aug"], base_folder_orig=DATASET_PATH["orig"])
     test_data = dataset.dataset_test
     test_loader = DataLoader(test_data, batch_size=BATCH_SIZE, shuffle=False)
 
